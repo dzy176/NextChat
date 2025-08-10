@@ -492,6 +492,7 @@ export const VISION_MODEL_REGEXES = [
   /vl/i,
   /o3/,
   /o4-mini/,
+  /gpt-5-mini/,
   /grok-4/i,
 ];
 
