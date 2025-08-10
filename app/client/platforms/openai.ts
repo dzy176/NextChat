@@ -199,6 +199,7 @@ export class ChatGPTApi implements LLMApi {
     const isO1OrO3 =
       options.config.model.startsWith("o1") ||
       options.config.model.startsWith("o3") ||
+      options.config.model.startsWith("gpt-5-mini") ||
       options.config.model.startsWith("o4-mini");
     if (isDalle3) {
       const prompt = getMessageTextContent(
@@ -252,9 +253,9 @@ export class ChatGPTApi implements LLMApi {
       }
 
       // add max_tokens to vision model
-      if (visionModel && !isO1OrO3) {
-        requestPayload["max_tokens"] = Math.max(modelConfig.max_tokens, 4000);
-      }
+      //if (visionModel && !isO1OrO3) {
+      //  requestPayload["max_tokens"] = Math.max(modelConfig.max_tokens, 4000);
+      //}
     }
 
     console.log("[Request] openai payload: ", requestPayload);
